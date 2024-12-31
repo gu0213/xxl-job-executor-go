@@ -177,7 +177,7 @@ func (e *executor) runTask(writer http.ResponseWriter, request *http.Request) {
 	go task.Run(func(code int64, msg string) {
 		e.callback(task, code, msg)
 	})
-	e.log.Info("任务[%d]已经在运行了: %s", param.JobID, param.ExecutorHandler)
+	e.log.Info("任务[%d]调用成功: %s", param.JobID, param.ExecutorHandler)
 	_, _ = writer.Write(returnGeneral())
 }
 
